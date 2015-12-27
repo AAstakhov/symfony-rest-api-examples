@@ -1,0 +1,16 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+    jms_serializer.object_constructor:
+        alias: jms_serializer.doctrine_object_constructor
+        public: false
+
+    app.deserialize_subscriber:
+        class: AppBundle\EventListener\DeserializeSubscriber
+        arguments:
+          - @request_stack
+        tags:
+          - { name: jms_serializer.event_subscriber }
