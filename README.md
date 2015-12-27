@@ -1,4 +1,4 @@
-fosrest
+REST API Examples with Symfony
 =======
 
-A Symfony project created on December 27, 2015, 2:32 pm.
+REST API based on Symfony.
